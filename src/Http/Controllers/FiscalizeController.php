@@ -1,16 +1,16 @@
 <?php
 
-namespace Jointdots\FiskalizimiKs\Http\Controllers;
+namespace EfdFlow\FiskalizimiKs\Http\Controllers;
 
 use Illuminate\Http\JsonResponse;
 use Illuminate\Routing\Controller;
-use Jointdots\FiskalizimiKs\Dto\CouponType;
-use Jointdots\FiskalizimiKs\Dto\FiscalConfig;
-use Jointdots\FiskalizimiKs\Dto\FiscalResult;
-use Jointdots\FiskalizimiKs\Dto\FiscalStatus;
-use Jointdots\FiskalizimiKs\FiskalizimiService;
-use Jointdots\FiskalizimiKs\Http\Requests\FiscalizeRequest;
-use Jointdots\FiskalizimiKs\Models\FiscalCoupon;
+use EfdFlow\FiskalizimiKs\Dto\CouponType;
+use EfdFlow\FiskalizimiKs\Dto\FiscalConfig;
+use EfdFlow\FiskalizimiKs\Dto\FiscalResult;
+use EfdFlow\FiskalizimiKs\Dto\FiscalStatus;
+use EfdFlow\FiskalizimiKs\FiskalizimiService;
+use EfdFlow\FiskalizimiKs\Http\Requests\FiscalizeRequest;
+use EfdFlow\FiskalizimiKs\Models\FiscalCoupon;
 
 class FiscalizeController extends Controller
 {

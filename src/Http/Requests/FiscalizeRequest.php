@@ -1,15 +1,15 @@
 <?php
 
-namespace Jointdots\FiskalizimiKs\Http\Requests;
+namespace EfdFlow\FiskalizimiKs\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
-use Jointdots\FiskalizimiKs\Dto\CouponData;
-use Jointdots\FiskalizimiKs\Dto\CouponType;
-use Jointdots\FiskalizimiKs\Dto\ItemData;
-use Jointdots\FiskalizimiKs\Dto\PaymentData;
-use Jointdots\FiskalizimiKs\Dto\PaymentType;
-use Jointdots\FiskalizimiKs\Engine\FiskalizimiMoney;
-use Jointdots\FiskalizimiKs\Engine\VerificationNo;
+use EfdFlow\FiskalizimiKs\Dto\CouponData;
+use EfdFlow\FiskalizimiKs\Dto\CouponType;
+use EfdFlow\FiskalizimiKs\Dto\ItemData;
+use EfdFlow\FiskalizimiKs\Dto\PaymentData;
+use EfdFlow\FiskalizimiKs\Dto\PaymentType;
+use EfdFlow\FiskalizimiKs\Engine\FiskalizimiMoney;
+use EfdFlow\FiskalizimiKs\Engine\VerificationNo;
 
 class FiscalizeRequest extends FormRequest
 {

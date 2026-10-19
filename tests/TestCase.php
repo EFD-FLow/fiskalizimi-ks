@@ -1,8 +1,8 @@
 <?php
 
-namespace Jointdots\FiskalizimiKs\Tests;
+namespace EfdFlow\FiskalizimiKs\Tests;
 
-use Jointdots\FiskalizimiKs\FiskalizimiServiceProvider;
+use EfdFlow\FiskalizimiKs\FiskalizimiServiceProvider;
 use Orchestra\Testbench\TestCase as BaseTestCase;
 
 abstract class TestCase extends BaseTestCase

@@ -1,8 +1,8 @@
 <?php
 
-namespace Jointdots\FiskalizimiKs\Tests\Unit\Engine;
+namespace EfdFlow\FiskalizimiKs\Tests\Unit\Engine;
 
-use Jointdots\FiskalizimiKs\Engine\FiskalizimiMoney;
+use EfdFlow\FiskalizimiKs\Engine\FiskalizimiMoney;
 use PHPUnit\Framework\TestCase;
 
 class FiskalizimiMoneyTest extends TestCase

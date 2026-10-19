@@ -1,10 +1,10 @@
 <?php
 
-namespace Jointdots\FiskalizimiKs\Tests\Integration;
+namespace EfdFlow\FiskalizimiKs\Tests\Integration;
 
-use Jointdots\FiskalizimiKs\Jobs\ResubmitCouponJob;
-use Jointdots\FiskalizimiKs\Models\FiscalCoupon;
-use Jointdots\FiskalizimiKs\Tests\TestCase;
+use EfdFlow\FiskalizimiKs\Jobs\ResubmitCouponJob;
+use EfdFlow\FiskalizimiKs\Models\FiscalCoupon;
+use EfdFlow\FiskalizimiKs\Tests\TestCase;
 use RuntimeException;
 
 class ResubmitCouponJobTest extends TestCase

@@ -1,9 +1,9 @@
 <?php
 
-namespace Jointdots\FiskalizimiKs\Engine;
+namespace EfdFlow\FiskalizimiKs\Engine;
 
-use Jointdots\FiskalizimiKs\Generated\CitizenCoupon;
-use Jointdots\FiskalizimiKs\Generated\PosCoupon;
+use EfdFlow\FiskalizimiKs\Generated\CitizenCoupon;
+use EfdFlow\FiskalizimiKs\Generated\PosCoupon;
 
 final class BuiltCoupon
 {

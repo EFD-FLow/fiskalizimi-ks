@@ -1,6 +1,6 @@
 <?php
 
-namespace Jointdots\FiskalizimiKs\Http\Middleware;
+namespace EfdFlow\FiskalizimiKs\Http\Middleware;
 
 use Closure;
 use Illuminate\Http\Request;

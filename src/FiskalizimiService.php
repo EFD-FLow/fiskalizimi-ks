@@ -1,20 +1,20 @@
 <?php
 
-namespace Jointdots\FiskalizimiKs;
+namespace EfdFlow\FiskalizimiKs;
 
-use Jointdots\FiskalizimiKs\Dto\CouponData;
-use Jointdots\FiskalizimiKs\Dto\FiscalConfig;
-use Jointdots\FiskalizimiKs\Dto\FiscalResult;
-use Jointdots\FiskalizimiKs\Dto\FiscalStatus;
-use Jointdots\FiskalizimiKs\Engine\AtkClientInterface;
-use Jointdots\FiskalizimiKs\Engine\CouponBuilder;
-use Jointdots\FiskalizimiKs\Engine\CouponSnapshot;
-use Jointdots\FiskalizimiKs\Engine\QrGenerator;
-use Jointdots\FiskalizimiKs\Engine\SignerInterface;
-use Jointdots\FiskalizimiKs\Exceptions\FiscalConfigurationException;
-use Jointdots\FiskalizimiKs\Exceptions\FiscalSubmissionException;
-use Jointdots\FiskalizimiKs\Jobs\ResubmitCouponJob;
-use Jointdots\FiskalizimiKs\Models\FiscalCoupon;
+use EfdFlow\FiskalizimiKs\Dto\CouponData;
+use EfdFlow\FiskalizimiKs\Dto\FiscalConfig;
+use EfdFlow\FiskalizimiKs\Dto\FiscalResult;
+use EfdFlow\FiskalizimiKs\Dto\FiscalStatus;
+use EfdFlow\FiskalizimiKs\Engine\AtkClientInterface;
+use EfdFlow\FiskalizimiKs\Engine\CouponBuilder;
+use EfdFlow\FiskalizimiKs\Engine\CouponSnapshot;
+use EfdFlow\FiskalizimiKs\Engine\QrGenerator;
+use EfdFlow\FiskalizimiKs\Engine\SignerInterface;
+use EfdFlow\FiskalizimiKs\Exceptions\FiscalConfigurationException;
+use EfdFlow\FiskalizimiKs\Exceptions\FiscalSubmissionException;
+use EfdFlow\FiskalizimiKs\Jobs\ResubmitCouponJob;
+use EfdFlow\FiskalizimiKs\Models\FiscalCoupon;
 use Throwable;
 
 final class FiskalizimiService

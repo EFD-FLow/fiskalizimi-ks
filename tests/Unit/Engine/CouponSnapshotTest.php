@@ -1,11 +1,11 @@
 <?php
 
-namespace Jointdots\FiskalizimiKs\Tests\Unit\Engine;
+namespace EfdFlow\FiskalizimiKs\Tests\Unit\Engine;
 
-use Jointdots\FiskalizimiKs\Engine\CouponSnapshot;
-use Jointdots\FiskalizimiKs\Engine\VerificationNo;
-use Jointdots\FiskalizimiKs\Exceptions\FiscalConfigurationException;
-use Jointdots\FiskalizimiKs\Tests\TestCase;
+use EfdFlow\FiskalizimiKs\Engine\CouponSnapshot;
+use EfdFlow\FiskalizimiKs\Engine\VerificationNo;
+use EfdFlow\FiskalizimiKs\Exceptions\FiscalConfigurationException;
+use EfdFlow\FiskalizimiKs\Tests\TestCase;
 
 class CouponSnapshotTest extends TestCase
 {

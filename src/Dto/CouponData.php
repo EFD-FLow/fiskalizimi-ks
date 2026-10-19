@@ -1,6 +1,6 @@
 <?php
 
-namespace Jointdots\FiskalizimiKs\Dto;
+namespace EfdFlow\FiskalizimiKs\Dto;
 
 final class CouponData
 {

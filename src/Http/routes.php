@@ -1,9 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use Jointdots\FiskalizimiKs\Http\Controllers\FiscalizeController;
-use Jointdots\FiskalizimiKs\Http\Middleware\FiscalApiTokenMiddleware;
-use Jointdots\FiskalizimiKs\Http\Middleware\LogFiscalRequestMiddleware;
+use EfdFlow\FiskalizimiKs\Http\Controllers\FiscalizeController;
+use EfdFlow\FiskalizimiKs\Http\Middleware\FiscalApiTokenMiddleware;
+use EfdFlow\FiskalizimiKs\Http\Middleware\LogFiscalRequestMiddleware;
 
 $prefix = config('fiskalizimi.api.prefix', 'api/fiscal');
 

@@ -1,9 +1,9 @@
 <?php
 
-namespace Jointdots\FiskalizimiKs\Engine;
+namespace EfdFlow\FiskalizimiKs\Engine;
 
-use Jointdots\FiskalizimiKs\Dto\FiscalConfig;
-use Jointdots\FiskalizimiKs\Exceptions\FiscalSubmissionException;
+use EfdFlow\FiskalizimiKs\Dto\FiscalConfig;
+use EfdFlow\FiskalizimiKs\Exceptions\FiscalSubmissionException;
 
 interface AtkClientInterface
 {

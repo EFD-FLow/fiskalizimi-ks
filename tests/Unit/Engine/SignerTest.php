@@ -1,17 +1,17 @@
 <?php
 
-namespace Jointdots\FiskalizimiKs\Tests\Unit\Engine;
+namespace EfdFlow\FiskalizimiKs\Tests\Unit\Engine;
 
-use Jointdots\FiskalizimiKs\Dto\FiscalConfig;
-use Jointdots\FiskalizimiKs\Engine\CouponBuilder;
-use Jointdots\FiskalizimiKs\Engine\CouponSnapshot;
-use Jointdots\FiskalizimiKs\Engine\Signer;
-use Jointdots\FiskalizimiKs\Exceptions\FiscalConfigurationException;
-use Jointdots\FiskalizimiKs\Tests\TestCase;
-use Jointdots\FiskalizimiKs\Dto\CouponData;
-use Jointdots\FiskalizimiKs\Dto\ItemData;
-use Jointdots\FiskalizimiKs\Dto\PaymentData;
-use Jointdots\FiskalizimiKs\Dto\PaymentType;
+use EfdFlow\FiskalizimiKs\Dto\FiscalConfig;
+use EfdFlow\FiskalizimiKs\Engine\CouponBuilder;
+use EfdFlow\FiskalizimiKs\Engine\CouponSnapshot;
+use EfdFlow\FiskalizimiKs\Engine\Signer;
+use EfdFlow\FiskalizimiKs\Exceptions\FiscalConfigurationException;
+use EfdFlow\FiskalizimiKs\Tests\TestCase;
+use EfdFlow\FiskalizimiKs\Dto\CouponData;
+use EfdFlow\FiskalizimiKs\Dto\ItemData;
+use EfdFlow\FiskalizimiKs\Dto\PaymentData;
+use EfdFlow\FiskalizimiKs\Dto\PaymentType;
 
 class SignerTest extends TestCase
 {
@@ -92,7 +92,7 @@ class SignerTest extends TestCase
         return new FiscalConfig(1001, 42, 1, 1, 'Test', $keyPath);
     }
 
-    private function buildCoupon(FiscalConfig $config): \Jointdots\FiskalizimiKs\Generated\PosCoupon
+    private function buildCoupon(FiscalConfig $config): \EfdFlow\FiskalizimiKs\Generated\PosCoupon
     {
         $snapshot = CouponSnapshot::generate(existsChecker: fn() => false);
         $data     = new CouponData(

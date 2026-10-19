@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace Jointdots\FiskalizimiKs\Engine;
+namespace EfdFlow\FiskalizimiKs\Engine;
 
-use Jointdots\FiskalizimiKs\Dto\FiscalConfig;
-use Jointdots\FiskalizimiKs\Generated\PosCoupon;
+use EfdFlow\FiskalizimiKs\Dto\FiscalConfig;
+use EfdFlow\FiskalizimiKs\Generated\PosCoupon;
 
 interface SignerInterface
 {

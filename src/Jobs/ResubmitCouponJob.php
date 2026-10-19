@@ -1,6 +1,6 @@
 <?php
 
-namespace Jointdots\FiskalizimiKs\Jobs;
+namespace EfdFlow\FiskalizimiKs\Jobs;
 
 use DateTimeImmutable;
 use DateTimeInterface;
@@ -9,11 +9,11 @@ use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Foundation\Bus\Dispatchable;
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Queue\SerializesModels;
-use Jointdots\FiskalizimiKs\Dto\FiscalConfig;
-use Jointdots\FiskalizimiKs\Engine\AtkClientInterface;
-use Jointdots\FiskalizimiKs\Engine\SignedPayload;
-use Jointdots\FiskalizimiKs\Exceptions\FiscalSubmissionException;
-use Jointdots\FiskalizimiKs\Models\FiscalCoupon;
+use EfdFlow\FiskalizimiKs\Dto\FiscalConfig;
+use EfdFlow\FiskalizimiKs\Engine\AtkClientInterface;
+use EfdFlow\FiskalizimiKs\Engine\SignedPayload;
+use EfdFlow\FiskalizimiKs\Exceptions\FiscalSubmissionException;
+use EfdFlow\FiskalizimiKs\Models\FiscalCoupon;
 use Throwable;
 
 class ResubmitCouponJob implements ShouldQueue

@@ -1,11 +1,11 @@
 <?php
 
-namespace Jointdots\FiskalizimiKs\Tests\Feature;
+namespace EfdFlow\FiskalizimiKs\Tests\Feature;
 
-use Jointdots\FiskalizimiKs\Engine\AtkClientInterface;
-use Jointdots\FiskalizimiKs\Engine\VerificationNo;
-use Jointdots\FiskalizimiKs\Models\FiscalCoupon;
-use Jointdots\FiskalizimiKs\Tests\TestCase;
+use EfdFlow\FiskalizimiKs\Engine\AtkClientInterface;
+use EfdFlow\FiskalizimiKs\Engine\VerificationNo;
+use EfdFlow\FiskalizimiKs\Models\FiscalCoupon;
+use EfdFlow\FiskalizimiKs\Tests\TestCase;
 use Mockery;
 
 /**

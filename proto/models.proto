@@ -3,8 +3,8 @@ syntax = "proto3";
 package atk;
 
 option go_package = "./proto";
-option php_namespace = "Jointdots\\FiskalizimiKs\\Generated";
-option php_metadata_namespace = "Jointdots\\FiskalizimiKs\\Generated\\GPBMetadata";
+option php_namespace = "EfdFlow\\FiskalizimiKs\\Generated";
+option php_metadata_namespace = "EfdFlow\\FiskalizimiKs\\Generated\\GPBMetadata";
 
 enum CouponType {
   UnknownType = 0;

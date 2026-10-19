@@ -1,6 +1,6 @@
 <?php
 
-namespace Jointdots\FiskalizimiKs\Exceptions;
+namespace EfdFlow\FiskalizimiKs\Exceptions;
 
 use RuntimeException;
 

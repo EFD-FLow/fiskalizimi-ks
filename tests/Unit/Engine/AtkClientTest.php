@@ -1,16 +1,16 @@
 <?php
 
-namespace Jointdots\FiskalizimiKs\Tests\Unit\Engine;
+namespace EfdFlow\FiskalizimiKs\Tests\Unit\Engine;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\Handler\MockHandler;
 use GuzzleHttp\HandlerStack;
 use GuzzleHttp\Psr7\Response;
-use Jointdots\FiskalizimiKs\Dto\FiscalConfig;
+use EfdFlow\FiskalizimiKs\Dto\FiscalConfig;
 use PHPUnit\Framework\Attributes\DataProvider;
-use Jointdots\FiskalizimiKs\Engine\AtkClient;
-use Jointdots\FiskalizimiKs\Engine\SignedPayload;
-use Jointdots\FiskalizimiKs\Exceptions\FiscalSubmissionException;
+use EfdFlow\FiskalizimiKs\Engine\AtkClient;
+use EfdFlow\FiskalizimiKs\Engine\SignedPayload;
+use EfdFlow\FiskalizimiKs\Exceptions\FiscalSubmissionException;
 use PHPUnit\Framework\TestCase;
 
 class AtkClientTest extends TestCase

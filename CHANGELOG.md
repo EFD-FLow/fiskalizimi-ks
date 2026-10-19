@@ -3,6 +3,18 @@
 All notable public changes are documented in this file. The project follows
 Semantic Versioning and the Keep a Changelog format.
 
+## [Unreleased]
+
+### Changed
+
+- The package has moved from Joint Dots to EFD Flow. It is now published as
+  `efd-flow/fiskalizimi-ks` from https://github.com/EFD-FLow/fiskalizimi-ks, and
+  its root namespace is `EfdFlow\FiskalizimiKs` instead of
+  `Jointdots\FiskalizimiKs`. Behaviour is unchanged. Consumers replace
+  `jointdots/fiskalizimi-ks` with `efd-flow/fiskalizimi-ks` in `composer.json`
+  and rewrite their `use Jointdots\FiskalizimiKs\...` imports to
+  `use EfdFlow\FiskalizimiKs\...`.
+
 ## [0.9.1] - 2026-08-28
 
 ### Fixed
@@ -239,7 +251,7 @@ Initial public integration-preview release.
 - Private keys, signatures, QR payloads, and coupon lines are excluded from
   package request logs
 
-[0.9.1]: https://github.com/jointdots/fiskalizimi-ks/compare/0.9.0...0.9.1
-[0.9.0]: https://github.com/jointdots/fiskalizimi-ks/compare/0.8.0...0.9.0
-[0.4.0]: https://github.com/jointdots/fiskalizimi-ks/compare/v0.3.0...v0.4.0
-[0.3.0]: https://github.com/jointdots/fiskalizimi-ks/releases/tag/v0.3.0
+[0.9.1]: https://github.com/EFD-FLow/fiskalizimi-ks/compare/0.9.0...0.9.1
+[0.9.0]: https://github.com/EFD-FLow/fiskalizimi-ks/compare/0.8.0...0.9.0
+[0.4.0]: https://github.com/EFD-FLow/fiskalizimi-ks/compare/v0.3.0...v0.4.0
+[0.3.0]: https://github.com/EFD-FLow/fiskalizimi-ks/releases/tag/v0.3.0

@@ -1,23 +1,23 @@
 <?php
 
-namespace Jointdots\FiskalizimiKs\Tests\Unit;
+namespace EfdFlow\FiskalizimiKs\Tests\Unit;
 
-use Jointdots\FiskalizimiKs\Dto\CouponData;
-use Jointdots\FiskalizimiKs\Dto\FiscalConfig;
-use Jointdots\FiskalizimiKs\Dto\FiscalStatus;
-use Jointdots\FiskalizimiKs\Dto\ItemData;
-use Jointdots\FiskalizimiKs\Dto\PaymentData;
-use Jointdots\FiskalizimiKs\Dto\PaymentType;
-use Jointdots\FiskalizimiKs\Engine\AtkClientInterface;
-use Jointdots\FiskalizimiKs\Engine\CouponBuilder;
-use Jointdots\FiskalizimiKs\Engine\QrGenerator;
-use Jointdots\FiskalizimiKs\Engine\Signer;
-use Jointdots\FiskalizimiKs\Engine\VerificationNo;
-use Jointdots\FiskalizimiKs\Exceptions\FiscalConfigurationException;
-use Jointdots\FiskalizimiKs\Exceptions\FiscalSubmissionException;
-use Jointdots\FiskalizimiKs\FiskalizimiService;
-use Jointdots\FiskalizimiKs\Models\FiscalCoupon;
-use Jointdots\FiskalizimiKs\Tests\TestCase;
+use EfdFlow\FiskalizimiKs\Dto\CouponData;
+use EfdFlow\FiskalizimiKs\Dto\FiscalConfig;
+use EfdFlow\FiskalizimiKs\Dto\FiscalStatus;
+use EfdFlow\FiskalizimiKs\Dto\ItemData;
+use EfdFlow\FiskalizimiKs\Dto\PaymentData;
+use EfdFlow\FiskalizimiKs\Dto\PaymentType;
+use EfdFlow\FiskalizimiKs\Engine\AtkClientInterface;
+use EfdFlow\FiskalizimiKs\Engine\CouponBuilder;
+use EfdFlow\FiskalizimiKs\Engine\QrGenerator;
+use EfdFlow\FiskalizimiKs\Engine\Signer;
+use EfdFlow\FiskalizimiKs\Engine\VerificationNo;
+use EfdFlow\FiskalizimiKs\Exceptions\FiscalConfigurationException;
+use EfdFlow\FiskalizimiKs\Exceptions\FiscalSubmissionException;
+use EfdFlow\FiskalizimiKs\FiskalizimiService;
+use EfdFlow\FiskalizimiKs\Models\FiscalCoupon;
+use EfdFlow\FiskalizimiKs\Tests\TestCase;
 use Illuminate\Support\Facades\Bus;
 use Mockery;
 

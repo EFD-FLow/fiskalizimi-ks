@@ -1,10 +1,10 @@
 <?php
 
-namespace Jointdots\FiskalizimiKs\Engine;
+namespace EfdFlow\FiskalizimiKs\Engine;
 
-use Jointdots\FiskalizimiKs\Dto\FiscalConfig;
-use Jointdots\FiskalizimiKs\Exceptions\FiscalSigningException;
-use Jointdots\FiskalizimiKs\Generated\CitizenCoupon;
+use EfdFlow\FiskalizimiKs\Dto\FiscalConfig;
+use EfdFlow\FiskalizimiKs\Exceptions\FiscalSigningException;
+use EfdFlow\FiskalizimiKs\Generated\CitizenCoupon;
 
 final class QrGenerator
 {

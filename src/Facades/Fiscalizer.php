@@ -1,12 +1,12 @@
 <?php
 
-namespace Jointdots\FiskalizimiKs\Facades;
+namespace EfdFlow\FiskalizimiKs\Facades;
 
 use Illuminate\Support\Facades\Facade;
-use Jointdots\FiskalizimiKs\FiskalizimiService;
+use EfdFlow\FiskalizimiKs\FiskalizimiService;
 
 /**
- * @method static \Jointdots\FiskalizimiKs\Dto\FiscalResult fiscalize(\Jointdots\FiskalizimiKs\Dto\CouponData $data, \Jointdots\FiskalizimiKs\Dto\FiscalConfig $config)
+ * @method static \EfdFlow\FiskalizimiKs\Dto\FiscalResult fiscalize(\EfdFlow\FiskalizimiKs\Dto\CouponData $data, \EfdFlow\FiskalizimiKs\Dto\FiscalConfig $config)
  */
 class Fiscalizer extends Facade
 {

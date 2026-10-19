@@ -1,18 +1,18 @@
 <?php
 
-namespace Jointdots\FiskalizimiKs\Tests\Unit\Engine;
+namespace EfdFlow\FiskalizimiKs\Tests\Unit\Engine;
 
-use Jointdots\FiskalizimiKs\Dto\CouponData;
-use Jointdots\FiskalizimiKs\Dto\CouponType;
-use Jointdots\FiskalizimiKs\Dto\FiscalConfig;
-use Jointdots\FiskalizimiKs\Dto\ItemData;
-use Jointdots\FiskalizimiKs\Dto\PaymentData;
-use Jointdots\FiskalizimiKs\Dto\PaymentType;
-use Jointdots\FiskalizimiKs\Engine\CouponBuilder;
-use Jointdots\FiskalizimiKs\Engine\CouponSnapshot;
-use Jointdots\FiskalizimiKs\Exceptions\FiscalConfigurationException;
-use Jointdots\FiskalizimiKs\Generated\CouponType as ProtoCouponType;
-use Jointdots\FiskalizimiKs\Tests\TestCase;
+use EfdFlow\FiskalizimiKs\Dto\CouponData;
+use EfdFlow\FiskalizimiKs\Dto\CouponType;
+use EfdFlow\FiskalizimiKs\Dto\FiscalConfig;
+use EfdFlow\FiskalizimiKs\Dto\ItemData;
+use EfdFlow\FiskalizimiKs\Dto\PaymentData;
+use EfdFlow\FiskalizimiKs\Dto\PaymentType;
+use EfdFlow\FiskalizimiKs\Engine\CouponBuilder;
+use EfdFlow\FiskalizimiKs\Engine\CouponSnapshot;
+use EfdFlow\FiskalizimiKs\Exceptions\FiscalConfigurationException;
+use EfdFlow\FiskalizimiKs\Generated\CouponType as ProtoCouponType;
+use EfdFlow\FiskalizimiKs\Tests\TestCase;
 
 class CouponBuilderTest extends TestCase
 {

@@ -1,15 +1,15 @@
 <?php
 
-namespace Jointdots\FiskalizimiKs;
+namespace EfdFlow\FiskalizimiKs;
 
 use Illuminate\Support\ServiceProvider;
-use Jointdots\FiskalizimiKs\Dto\FiscalConfig;
-use Jointdots\FiskalizimiKs\Engine\AtkClient;
-use Jointdots\FiskalizimiKs\Engine\AtkClientInterface;
-use Jointdots\FiskalizimiKs\Engine\CouponBuilder;
-use Jointdots\FiskalizimiKs\Engine\QrGenerator;
-use Jointdots\FiskalizimiKs\Engine\Signer;
-use Jointdots\FiskalizimiKs\Engine\SignerInterface;
+use EfdFlow\FiskalizimiKs\Dto\FiscalConfig;
+use EfdFlow\FiskalizimiKs\Engine\AtkClient;
+use EfdFlow\FiskalizimiKs\Engine\AtkClientInterface;
+use EfdFlow\FiskalizimiKs\Engine\CouponBuilder;
+use EfdFlow\FiskalizimiKs\Engine\QrGenerator;
+use EfdFlow\FiskalizimiKs\Engine\Signer;
+use EfdFlow\FiskalizimiKs\Engine\SignerInterface;
 
 class FiskalizimiServiceProvider extends ServiceProvider
 {

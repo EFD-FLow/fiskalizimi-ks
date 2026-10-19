@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace Jointdots\FiskalizimiKs\Tests\Unit;
+namespace EfdFlow\FiskalizimiKs\Tests\Unit;
 
-use Jointdots\FiskalizimiKs\Engine\Signer;
-use Jointdots\FiskalizimiKs\Engine\SignerInterface;
-use Jointdots\FiskalizimiKs\Tests\TestCase;
+use EfdFlow\FiskalizimiKs\Engine\Signer;
+use EfdFlow\FiskalizimiKs\Engine\SignerInterface;
+use EfdFlow\FiskalizimiKs\Tests\TestCase;
 
 class SignerSeamTest extends TestCase
 {

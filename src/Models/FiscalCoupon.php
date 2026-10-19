@@ -1,6 +1,6 @@
 <?php
 
-namespace Jointdots\FiskalizimiKs\Models;
+namespace EfdFlow\FiskalizimiKs\Models;
 
 use Illuminate\Database\Eloquent\Model;
 

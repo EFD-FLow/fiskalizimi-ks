@@ -3,7 +3,7 @@
 # NO CHECKED-IN PROTOBUF GENCODE
 # source: models.proto
 
-namespace Jointdots\FiskalizimiKs\Generated;
+namespace EfdFlow\FiskalizimiKs\Generated;
 
 use Google\Protobuf\Internal\GPBType;
 use Google\Protobuf\Internal\GPBUtil;
@@ -73,13 +73,13 @@ class CitizenCoupon extends \Google\Protobuf\Internal\Message
      *     @type int $Type
      *     @type int|string $Time
      *     @type int|string $Total
-     *     @type \Jointdots\FiskalizimiKs\Generated\TaxGroup[] $TaxGroups
+     *     @type \EfdFlow\FiskalizimiKs\Generated\TaxGroup[] $TaxGroups
      *     @type int|string $TotalTax
      *     @type int|string $TotalNoTax
      * }
      */
     public function __construct($data = NULL) {
-        \Jointdots\FiskalizimiKs\Generated\GPBMetadata\Models::initOnce();
+        \EfdFlow\FiskalizimiKs\Generated\GPBMetadata\Models::initOnce();
         parent::__construct($data);
     }
 
@@ -195,7 +195,7 @@ class CitizenCoupon extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.atk.CouponType Type = 6;</code>
-     * @return int one of the values in {@see \Jointdots\FiskalizimiKs\Generated\CouponType}
+     * @return int one of the values in {@see \EfdFlow\FiskalizimiKs\Generated\CouponType}
      */
     public function getType()
     {
@@ -204,12 +204,12 @@ class CitizenCoupon extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.atk.CouponType Type = 6;</code>
-     * @param int $var one of the values in {@see \Jointdots\FiskalizimiKs\Generated\CouponType}
+     * @param int $var one of the values in {@see \EfdFlow\FiskalizimiKs\Generated\CouponType}
      * @return $this
      */
     public function setType(int $var)
     {
-        GPBUtil::checkEnum($var, \Jointdots\FiskalizimiKs\Generated\CouponType::class);
+        GPBUtil::checkEnum($var, \EfdFlow\FiskalizimiKs\Generated\CouponType::class);
         $this->Type = $var;
 
         return $this;
@@ -261,7 +261,7 @@ class CitizenCoupon extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .atk.TaxGroup TaxGroups = 9;</code>
-     * @return RepeatedField<\Jointdots\FiskalizimiKs\Generated\TaxGroup>
+     * @return RepeatedField<\EfdFlow\FiskalizimiKs\Generated\TaxGroup>
      */
     public function getTaxGroups()
     {
@@ -270,12 +270,12 @@ class CitizenCoupon extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .atk.TaxGroup TaxGroups = 9;</code>
-     * @param \Jointdots\FiskalizimiKs\Generated\TaxGroup[] $var
+     * @param \EfdFlow\FiskalizimiKs\Generated\TaxGroup[] $var
      * @return $this
      */
     public function setTaxGroups(array|RepeatedField $var)
     {
-        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Jointdots\FiskalizimiKs\Generated\TaxGroup::class);
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \EfdFlow\FiskalizimiKs\Generated\TaxGroup::class);
         $this->TaxGroups = $arr;
 
         return $this;

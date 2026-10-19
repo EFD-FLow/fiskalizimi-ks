@@ -1,5 +1,5 @@
 <?php
 
-namespace Jointdots\FiskalizimiKs\Exceptions;
+namespace EfdFlow\FiskalizimiKs\Exceptions;
 
 class FiscalSigningException extends FiscalConfigurationException {}

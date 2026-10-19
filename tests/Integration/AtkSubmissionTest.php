@@ -1,20 +1,20 @@
 <?php
 
-namespace Jointdots\FiskalizimiKs\Tests\Integration;
+namespace EfdFlow\FiskalizimiKs\Tests\Integration;
 
-use Jointdots\FiskalizimiKs\Dto\CouponData;
-use Jointdots\FiskalizimiKs\Dto\FiscalConfig;
-use Jointdots\FiskalizimiKs\Dto\FiscalStatus;
-use Jointdots\FiskalizimiKs\Dto\ItemData;
-use Jointdots\FiskalizimiKs\Dto\PaymentData;
-use Jointdots\FiskalizimiKs\Dto\PaymentType;
-use Jointdots\FiskalizimiKs\Engine\AtkClient;
-use Jointdots\FiskalizimiKs\Engine\CouponBuilder;
-use Jointdots\FiskalizimiKs\Engine\QrGenerator;
-use Jointdots\FiskalizimiKs\Engine\Signer;
-use Jointdots\FiskalizimiKs\Engine\VerificationNo;
-use Jointdots\FiskalizimiKs\FiskalizimiService;
-use Jointdots\FiskalizimiKs\Tests\TestCase;
+use EfdFlow\FiskalizimiKs\Dto\CouponData;
+use EfdFlow\FiskalizimiKs\Dto\FiscalConfig;
+use EfdFlow\FiskalizimiKs\Dto\FiscalStatus;
+use EfdFlow\FiskalizimiKs\Dto\ItemData;
+use EfdFlow\FiskalizimiKs\Dto\PaymentData;
+use EfdFlow\FiskalizimiKs\Dto\PaymentType;
+use EfdFlow\FiskalizimiKs\Engine\AtkClient;
+use EfdFlow\FiskalizimiKs\Engine\CouponBuilder;
+use EfdFlow\FiskalizimiKs\Engine\QrGenerator;
+use EfdFlow\FiskalizimiKs\Engine\Signer;
+use EfdFlow\FiskalizimiKs\Engine\VerificationNo;
+use EfdFlow\FiskalizimiKs\FiskalizimiService;
+use EfdFlow\FiskalizimiKs\Tests\TestCase;
 
 class AtkSubmissionTest extends TestCase
 {

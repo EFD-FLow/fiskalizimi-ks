@@ -1,21 +1,21 @@
 <?php
 
-namespace Jointdots\FiskalizimiKs\Engine;
+namespace EfdFlow\FiskalizimiKs\Engine;
 
-use Jointdots\FiskalizimiKs\Dto\CouponData;
-use Jointdots\FiskalizimiKs\Dto\CouponType;
-use Jointdots\FiskalizimiKs\Dto\FiscalConfig;
-use Jointdots\FiskalizimiKs\Dto\ItemData;
-use Jointdots\FiskalizimiKs\Dto\PaymentData;
-use Jointdots\FiskalizimiKs\Dto\PaymentType;
-use Jointdots\FiskalizimiKs\Exceptions\FiscalConfigurationException;
-use Jointdots\FiskalizimiKs\Generated\CitizenCoupon;
-use Jointdots\FiskalizimiKs\Generated\CouponItem;
-use Jointdots\FiskalizimiKs\Generated\CouponType as ProtoCouponType;
-use Jointdots\FiskalizimiKs\Generated\Payment;
-use Jointdots\FiskalizimiKs\Generated\PaymentType as ProtoPaymentType;
-use Jointdots\FiskalizimiKs\Generated\PosCoupon;
-use Jointdots\FiskalizimiKs\Generated\TaxGroup;
+use EfdFlow\FiskalizimiKs\Dto\CouponData;
+use EfdFlow\FiskalizimiKs\Dto\CouponType;
+use EfdFlow\FiskalizimiKs\Dto\FiscalConfig;
+use EfdFlow\FiskalizimiKs\Dto\ItemData;
+use EfdFlow\FiskalizimiKs\Dto\PaymentData;
+use EfdFlow\FiskalizimiKs\Dto\PaymentType;
+use EfdFlow\FiskalizimiKs\Exceptions\FiscalConfigurationException;
+use EfdFlow\FiskalizimiKs\Generated\CitizenCoupon;
+use EfdFlow\FiskalizimiKs\Generated\CouponItem;
+use EfdFlow\FiskalizimiKs\Generated\CouponType as ProtoCouponType;
+use EfdFlow\FiskalizimiKs\Generated\Payment;
+use EfdFlow\FiskalizimiKs\Generated\PaymentType as ProtoPaymentType;
+use EfdFlow\FiskalizimiKs\Generated\PosCoupon;
+use EfdFlow\FiskalizimiKs\Generated\TaxGroup;
 
 final class CouponBuilder
 {

@@ -1,14 +1,14 @@
 <?php
 
-namespace Jointdots\FiskalizimiKs\Tests\Unit;
+namespace EfdFlow\FiskalizimiKs\Tests\Unit;
 
 use Google\Protobuf\RepeatedField;
-use Jointdots\FiskalizimiKs\Generated\CitizenCoupon;
-use Jointdots\FiskalizimiKs\Generated\CouponItem;
-use Jointdots\FiskalizimiKs\Generated\Payment;
-use Jointdots\FiskalizimiKs\Generated\PosCoupon;
-use Jointdots\FiskalizimiKs\Generated\TaxGroup;
-use Jointdots\FiskalizimiKs\Tests\TestCase;
+use EfdFlow\FiskalizimiKs\Generated\CitizenCoupon;
+use EfdFlow\FiskalizimiKs\Generated\CouponItem;
+use EfdFlow\FiskalizimiKs\Generated\Payment;
+use EfdFlow\FiskalizimiKs\Generated\PosCoupon;
+use EfdFlow\FiskalizimiKs\Generated\TaxGroup;
+use EfdFlow\FiskalizimiKs\Tests\TestCase;
 use ReflectionClass;
 use ReflectionNamedType;
 use ReflectionUnionType;

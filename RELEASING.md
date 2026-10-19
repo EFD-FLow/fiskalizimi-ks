@@ -15,7 +15,7 @@ This checklist applies to public package releases.
 - Confirm generated protobuf classes match `proto/models.proto`.
 - Compare `proto/models.proto` with the current official ATK contract.
 - Inspect the Composer archive and verify internal files are absent.
-- Verify `composer require jointdots/fiskalizimi-ks` in a clean Laravel
+- Verify `composer require efd-flow/fiskalizimi-ks` in a clean Laravel
   application.
 
 ## Release

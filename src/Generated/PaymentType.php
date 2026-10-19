@@ -3,7 +3,7 @@
 # NO CHECKED-IN PROTOBUF GENCODE
 # source: models.proto
 
-namespace Jointdots\FiskalizimiKs\Generated;
+namespace EfdFlow\FiskalizimiKs\Generated;
 
 use UnexpectedValueException;
 

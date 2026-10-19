@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace Jointdots\FiskalizimiKs\Engine;
+namespace EfdFlow\FiskalizimiKs\Engine;
 
-use Jointdots\FiskalizimiKs\Dto\FiscalConfig;
-use Jointdots\FiskalizimiKs\Exceptions\FiscalSigningException;
-use Jointdots\FiskalizimiKs\Generated\PosCoupon;
+use EfdFlow\FiskalizimiKs\Dto\FiscalConfig;
+use EfdFlow\FiskalizimiKs\Exceptions\FiscalSigningException;
+use EfdFlow\FiskalizimiKs\Generated\PosCoupon;
 
 final class Signer implements SignerInterface
 {

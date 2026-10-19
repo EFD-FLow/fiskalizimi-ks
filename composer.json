@@ -1,8 +1,8 @@
 {
-    "name": "jointdots/fiskalizimi-ks",
+    "name": "efd-flow/fiskalizimi-ks",
     "description": "Kosovo ATK SEF fiscalization integration for Laravel",
     "type": "library",
-    "homepage": "https://github.com/jointdots/fiskalizimi-ks",
+    "homepage": "https://github.com/EFD-FLow/fiskalizimi-ks",
     "keywords": [
         "atk",
         "fiscalization",
@@ -12,8 +12,8 @@
     ],
     "license": "MIT",
     "support": {
-        "issues": "https://github.com/jointdots/fiskalizimi-ks/issues",
-        "source": "https://github.com/jointdots/fiskalizimi-ks"
+        "issues": "https://github.com/EFD-FLow/fiskalizimi-ks/issues",
+        "source": "https://github.com/EFD-FLow/fiskalizimi-ks"
     },
     "require": {
         "php": "^8.2",
@@ -30,21 +30,21 @@
     },
     "autoload": {
         "psr-4": {
-            "Jointdots\\FiskalizimiKs\\": "src/"
+            "EfdFlow\\FiskalizimiKs\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Jointdots\\FiskalizimiKs\\Tests\\": "tests/"
+            "EfdFlow\\FiskalizimiKs\\Tests\\": "tests/"
         }
     },
     "extra": {
         "laravel": {
             "providers": [
-                "Jointdots\\FiskalizimiKs\\FiskalizimiServiceProvider"
+                "EfdFlow\\FiskalizimiKs\\FiskalizimiServiceProvider"
             ],
             "aliases": {
-                "Fiscalizer": "Jointdots\\FiskalizimiKs\\Facades\\Fiscalizer"
+                "Fiscalizer": "EfdFlow\\FiskalizimiKs\\Facades\\Fiscalizer"
             }
         }
     },

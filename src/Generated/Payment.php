@@ -3,7 +3,7 @@
 # NO CHECKED-IN PROTOBUF GENCODE
 # source: models.proto
 
-namespace Jointdots\FiskalizimiKs\Generated;
+namespace EfdFlow\FiskalizimiKs\Generated;
 
 use Google\Protobuf\Internal\GPBType;
 use Google\Protobuf\Internal\GPBUtil;
@@ -34,13 +34,13 @@ class Payment extends \Google\Protobuf\Internal\Message
      * }
      */
     public function __construct($data = NULL) {
-        \Jointdots\FiskalizimiKs\Generated\GPBMetadata\Models::initOnce();
+        \EfdFlow\FiskalizimiKs\Generated\GPBMetadata\Models::initOnce();
         parent::__construct($data);
     }
 
     /**
      * Generated from protobuf field <code>.atk.PaymentType Type = 1;</code>
-     * @return int one of the values in {@see \Jointdots\FiskalizimiKs\Generated\PaymentType}
+     * @return int one of the values in {@see \EfdFlow\FiskalizimiKs\Generated\PaymentType}
      */
     public function getType()
     {
@@ -49,12 +49,12 @@ class Payment extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.atk.PaymentType Type = 1;</code>
-     * @param int $var one of the values in {@see \Jointdots\FiskalizimiKs\Generated\PaymentType}
+     * @param int $var one of the values in {@see \EfdFlow\FiskalizimiKs\Generated\PaymentType}
      * @return $this
      */
     public function setType(int $var)
     {
-        GPBUtil::checkEnum($var, \Jointdots\FiskalizimiKs\Generated\PaymentType::class);
+        GPBUtil::checkEnum($var, \EfdFlow\FiskalizimiKs\Generated\PaymentType::class);
         $this->Type = $var;
 
         return $this;

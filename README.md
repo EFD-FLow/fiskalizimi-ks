@@ -62,7 +62,7 @@ before production use.
 ## Installation
 
 ```bash
-composer require jointdots/fiskalizimi-ks
+composer require efd-flow/fiskalizimi-ks
 ```
 
 Publish the configuration and migration:
@@ -113,11 +113,11 @@ approved that exact deployment model in writing.
 ## Programmatic Usage
 
 ```php
-use Jointdots\FiskalizimiKs\Dto\CouponData;
-use Jointdots\FiskalizimiKs\Dto\ItemData;
-use Jointdots\FiskalizimiKs\Dto\PaymentData;
-use Jointdots\FiskalizimiKs\Dto\PaymentType;
-use Jointdots\FiskalizimiKs\Facades\Fiscalizer;
+use EfdFlow\FiskalizimiKs\Dto\CouponData;
+use EfdFlow\FiskalizimiKs\Dto\ItemData;
+use EfdFlow\FiskalizimiKs\Dto\PaymentData;
+use EfdFlow\FiskalizimiKs\Dto\PaymentType;
+use EfdFlow\FiskalizimiKs\Facades\Fiscalizer;
 
 $coupon = new CouponData(
     items: [
@@ -140,7 +140,7 @@ $coupon = new CouponData(
 
 $result = Fiscalizer::fiscalize(
     $coupon,
-    app(\Jointdots\FiskalizimiKs\Dto\FiscalConfig::class),
+    app(\EfdFlow\FiskalizimiKs\Dto\FiscalConfig::class),
 );
 ```
 

@@ -1,8 +1,8 @@
 <?php
 
-namespace Jointdots\FiskalizimiKs\Engine;
+namespace EfdFlow\FiskalizimiKs\Engine;
 
-use Jointdots\FiskalizimiKs\Exceptions\FiscalConfigurationException;
+use EfdFlow\FiskalizimiKs\Exceptions\FiscalConfigurationException;
 
 /**
  * The NUIKF (Numri unik identifikues i kuponit fiskal).

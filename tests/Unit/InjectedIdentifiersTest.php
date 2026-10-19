@@ -1,10 +1,10 @@
 <?php
 
-namespace Jointdots\FiskalizimiKs\Tests\Unit;
+namespace EfdFlow\FiskalizimiKs\Tests\Unit;
 
-use Jointdots\FiskalizimiKs\Engine\CouponSnapshot;
-use Jointdots\FiskalizimiKs\Exceptions\FiscalConfigurationException;
-use Jointdots\FiskalizimiKs\Tests\TestCase;
+use EfdFlow\FiskalizimiKs\Engine\CouponSnapshot;
+use EfdFlow\FiskalizimiKs\Exceptions\FiscalConfigurationException;
+use EfdFlow\FiskalizimiKs\Tests\TestCase;
 
 class InjectedIdentifiersTest extends TestCase
 {

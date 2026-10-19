@@ -3,7 +3,7 @@
 # NO CHECKED-IN PROTOBUF GENCODE
 # source: models.proto
 
-namespace Jointdots\FiskalizimiKs\Generated;
+namespace EfdFlow\FiskalizimiKs\Generated;
 
 use Google\Protobuf\Internal\GPBType;
 use Google\Protobuf\Internal\GPBUtil;
@@ -39,7 +39,7 @@ class TaxGroup extends \Google\Protobuf\Internal\Message
      * }
      */
     public function __construct($data = NULL) {
-        \Jointdots\FiskalizimiKs\Generated\GPBMetadata\Models::initOnce();
+        \EfdFlow\FiskalizimiKs\Generated\GPBMetadata\Models::initOnce();
         parent::__construct($data);
     }
 
