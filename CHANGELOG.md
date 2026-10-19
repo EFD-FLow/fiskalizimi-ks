@@ -3,7 +3,7 @@
 All notable public changes are documented in this file. The project follows
 Semantic Versioning and the Keep a Changelog format.
 
-## [Unreleased]
+## [0.10.0] - 2026-10-19
 
 ### Changed
 
@@ -251,6 +251,7 @@ Initial public integration-preview release.
 - Private keys, signatures, QR payloads, and coupon lines are excluded from
   package request logs
 
+[0.10.0]: https://github.com/EFD-FLow/fiskalizimi-ks/compare/0.9.1...0.10.0
 [0.9.1]: https://github.com/EFD-FLow/fiskalizimi-ks/compare/0.9.0...0.9.1
 [0.9.0]: https://github.com/EFD-FLow/fiskalizimi-ks/compare/0.8.0...0.9.0
 [0.4.0]: https://github.com/EFD-FLow/fiskalizimi-ks/compare/v0.3.0...v0.4.0
