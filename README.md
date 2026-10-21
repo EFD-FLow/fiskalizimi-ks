@@ -147,6 +147,11 @@ $result = Fiscalizer::fiscalize(
 For returns and cancellations, set `CouponData::type` and provide the original
 coupon ID in `referenceNo`. A sale must not include a reference number.
 
+Pass every amount positive, for a correction too. The package sends returns and
+cancellations to ATK with **negative** amounts: item quantities and totals,
+payments, tax groups, the coupon totals and the discount, on both the POS and the
+citizen coupon. Unit prices stay positive. See *Correction amounts* below.
+
 ### Fiscal Coupon Identifier (NUIKF)
 
 The package generates a conformant NUIKF for each coupon — a unique, random,
@@ -310,6 +315,16 @@ The current ATK C# sample and protobuf contract use these wire values:
 
 The POS and citizen coupons must use the same type. `ReferenceNo` exists on
 the POS coupon and is mandatory for cancel and return coupons.
+
+### Correction amounts
+
+ATK's specification does not state the sign of a correction's amounts. On ATK
+TEST (2026-10-21) both signs were accepted and verified, but the test portal
+adds every coupon's amounts with the sign they carry: positive corrections were
+counted as more sales, negative ones netted out. The package therefore sends
+returns and cancellations negative. Callers still pass positive figures, which
+the package validates and checks against the caller's own record before it
+applies the sign.
 
 The C# repository was updated on June 11, 2026 to correct its documented
 cancel/return values. The PHP repository still contains the older

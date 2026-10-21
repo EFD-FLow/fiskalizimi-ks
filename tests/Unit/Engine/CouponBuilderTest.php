@@ -13,6 +13,7 @@ use EfdFlow\FiskalizimiKs\Engine\CouponSnapshot;
 use EfdFlow\FiskalizimiKs\Exceptions\FiscalConfigurationException;
 use EfdFlow\FiskalizimiKs\Generated\CouponType as ProtoCouponType;
 use EfdFlow\FiskalizimiKs\Tests\TestCase;
+use PHPUnit\Framework\Attributes\DataProvider;
 
 class CouponBuilderTest extends TestCase
 {
@@ -194,6 +195,71 @@ class CouponBuilderTest extends TestCase
         $this->assertSame(ProtoCouponType::Cancel, $built->posCoupon->getType());
         $this->assertSame(ProtoCouponType::Cancel, $built->citizenCoupon->getType());
         $this->assertSame(2, $built->posCoupon->getType());
+    }
+
+    /**
+     * Returns and cancellations travel with negative amounts, so ATK's totals net
+     * them out. Its TEST portal adds every coupon's amounts with their sign, and it
+     * accepted and verified negative corrections on 2026-10-21 (W162). The caller
+     * still passes positive figures and the type; the sign is applied here, once,
+     * to the POS coupon and the citizen coupon alike.
+     */
+    #[DataProvider('correctionTypes')]
+    public function test_corrections_carry_negative_amounts(CouponType $type): void
+    {
+        $data = new CouponData(
+            items:            [new ItemData('Ujë mineral 0,5 L', 5000, 'CP', 2.0, 10000, 'E', 'PJA')],
+            payments:         [new PaymentData(PaymentType::Cash, 100)],
+            operatorId:       'John',
+            type:             $type,
+            referenceNo:      77,
+            totalDiscount:    10,
+            expectedTotal:    100,
+            expectedTotalTax: 15,
+        );
+
+        $built = $this->builder->build($this->snapshot, $data, $this->config, couponId: 12);
+
+        foreach ([$built->posCoupon, $built->citizenCoupon] as $coupon) {
+            $this->assertSame(-100, $coupon->getTotal());
+            $this->assertSame(-15, $coupon->getTotalTax());
+            $this->assertSame(-85, $coupon->getTotalNoTax());
+            $this->assertSame([['E', -85, -15]], $this->taxGroupTuples($coupon->getTaxGroups()));
+        }
+
+        $item = iterator_to_array($built->posCoupon->getItems())[0];
+        $this->assertSame(5000, $item->getPrice(), 'the unit price stays positive');
+        $this->assertSame(-2.0, $item->getQuantity());
+        $this->assertSame(-10000, $item->getTotal());
+        $this->assertSame(-100, iterator_to_array($built->posCoupon->getPayments())[0]->getAmount());
+        $this->assertSame(-10, $built->posCoupon->getTotalDiscount());
+        $this->assertSame(77, $built->posCoupon->getReferenceNo());
+    }
+
+    public static function correctionTypes(): array
+    {
+        return ['return' => [CouponType::Return], 'cancellation' => [CouponType::Cancel]];
+    }
+
+    public function test_a_sale_keeps_positive_amounts(): void
+    {
+        $data = new CouponData(
+            items:         [new ItemData('Ujë mineral 0,5 L', 5000, 'CP', 2.0, 10000, 'E', 'PJA')],
+            payments:      [new PaymentData(PaymentType::Cash, 100)],
+            operatorId:    'John',
+            totalDiscount: 10,
+        );
+
+        $built = $this->builder->build($this->snapshot, $data, $this->config, couponId: 13);
+
+        $item = iterator_to_array($built->posCoupon->getItems())[0];
+        $this->assertSame(100, $built->posCoupon->getTotal());
+        $this->assertSame(100, $built->citizenCoupon->getTotal());
+        $this->assertSame([['E', 85, 15]], $this->taxGroupTuples($built->posCoupon->getTaxGroups()));
+        $this->assertSame(2.0, $item->getQuantity());
+        $this->assertSame(10000, $item->getTotal());
+        $this->assertSame(100, iterator_to_array($built->posCoupon->getPayments())[0]->getAmount());
+        $this->assertSame(10, $built->posCoupon->getTotalDiscount());
     }
 
     public function test_sale_coupon_uses_atk_sale_wire_value(): void

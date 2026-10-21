@@ -3,6 +3,20 @@
 All notable public changes are documented in this file. The project follows
 Semantic Versioning and the Keep a Changelog format.
 
+## [0.11.0] - 2026-10-21
+
+### Changed
+
+- **Returns and cancellations are sent with negative amounts.** Item quantities
+  and totals, payments, tax groups, the coupon totals and the total discount are
+  negated on both the POS and the citizen coupon; unit prices stay positive.
+  ATK's TEST portal adds every coupon's amounts with their sign, so positive
+  corrections were counted as further sales; negative ones were accepted and
+  verified there on 2026-10-21. Callers are unchanged: they still pass positive
+  figures and the coupon type, and the package validates them, and compares them
+  with the caller's expected totals, before it applies the sign. A consumer that
+  reads amounts back out of a correction's payload now sees them negative.
+
 ## [0.10.0] - 2026-10-19
 
 ### Changed
