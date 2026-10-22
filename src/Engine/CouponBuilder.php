@@ -40,28 +40,8 @@ final class CouponBuilder
 
         [$items, $taxGroupTotals, $totalUnits, $totalTaxUnits] = $this->processItems($data->items);
         $this->assertAgreesWithCallersRecord($data, $totalUnits, $totalTaxUnits);
-
-        // Returns and cancellations travel with negative amounts, so ATK's totals
-        // net them out: its portal adds every coupon's amounts with their sign, and
-        // it accepted and verified negative corrections on ATK TEST (2026-10-21).
-        // Callers keep passing positive figures and the type; everything above was
-        // validated and checked against their record in those positive figures,
-        // and the sign is applied here, once, to both the POS and citizen coupon.
-        $sign = $data->type === CouponType::Sale ? 1 : -1;
-        if ($sign === -1) {
-            foreach ($items as $item) {
-                $item->setQuantity(-$item->getQuantity());
-                $item->setTotal(-$item->getTotal());
-            }
-            foreach ($taxGroupTotals as $code => $totals) {
-                $taxGroupTotals[$code] = ['total_for_tax' => -$totals['total_for_tax'], 'total_tax' => -$totals['total_tax']];
-            }
-            $totalUnits    = -$totalUnits;
-            $totalTaxUnits = -$totalTaxUnits;
-        }
-
         $taxGroups  = $this->buildTaxGroups($taxGroupTotals);
-        $payments   = $this->buildPayments($data->payments, $sign);
+        $payments   = $this->buildPayments($data->payments);
         $couponType = $this->mapCouponType($data->type);
 
         $pos     = new PosCoupon();
@@ -89,7 +69,7 @@ final class CouponBuilder
         $pos->setApplicationId($config->applicationId);
         $pos->setItems($items);
         $pos->setPayments($payments);
-        $pos->setTotalDiscount($sign * $data->totalDiscount);
+        $pos->setTotalDiscount($data->totalDiscount);
 
         if ($data->referenceNo !== null) {
             $pos->setReferenceNo($data->referenceNo);
@@ -333,12 +313,12 @@ final class CouponBuilder
         }, array_keys($taxGroupTotals), $taxGroupTotals);
     }
 
-    private function buildPayments(array $payments, int $sign): array
+    private function buildPayments(array $payments): array
     {
-        return array_map(function (PaymentData $p) use ($sign) {
+        return array_map(function (PaymentData $p) {
             $payment = new Payment();
             $payment->setType($this->mapPaymentType($p->type));
-            $payment->setAmount($sign * $p->amount);
+            $payment->setAmount($p->amount);
             return $payment;
         }, $payments);
     }

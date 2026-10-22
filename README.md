@@ -148,9 +148,8 @@ For returns and cancellations, set `CouponData::type` and provide the original
 coupon ID in `referenceNo`. A sale must not include a reference number.
 
 Pass every amount positive, for a correction too. The package sends returns and
-cancellations to ATK with **negative** amounts: item quantities and totals,
-payments, tax groups, the coupon totals and the discount, on both the POS and the
-citizen coupon. Unit prices stay positive. See *Correction amounts* below.
+cancellations to ATK with the same **positive** amounts a sale carries; the type
+and `referenceNo` mark them as corrections. See *Correction amounts* below.
 
 ### Fiscal Coupon Identifier (NUIKF)
 
@@ -321,13 +320,13 @@ the POS coupon and is mandatory for cancel and return coupons.
 ATK's specification does not state the sign of a correction's amounts. On ATK
 TEST (2026-10-21) both signs were accepted and verified, but the test portal
 adds every coupon's amounts with the sign they carry: positive corrections were
-counted as more sales, negative ones netted out. The package therefore sends
-returns and cancellations negative. Callers still pass positive figures, which
-the package validates and checks against the caller's own record before it
-applies the sign.
+counted as more sales, negative ones netted out. 0.12.0 therefore sent returns
+and cancellations negative. Every ATK-certified till that could be inspected
+(2026-10-22) sends them positive, so 0.13.0 returns to
+positive amounts until ATK states the sign in writing.
 
-Since 0.12.0, `FiscalCoupon::carriesNegativeAmounts()` tells whether a journal
-row's signed payload went out negative; rows signed earlier report false.
+`FiscalCoupon::carriesNegativeAmounts()` (since 0.12.0) tells whether a journal
+row's signed payload went out negative. Only rows signed by 0.12.0 report true.
 
 The C# repository was updated on June 11, 2026 to correct its documented
 cancel/return values. The PHP repository still contains the older

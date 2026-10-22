@@ -18,18 +18,33 @@ use PHPUnit\Framework\Attributes\DataProvider;
 
 class FiscalCouponTest extends TestCase
 {
-    public function test_a_correction_built_by_this_engine_carries_negative_amounts(): void
+    public function test_a_correction_sent_negative_by_0_12_carries_negative_amounts(): void
     {
-        $coupon = $this->journalRowFor(CouponType::Return);
+        $payload = (new PosCoupon())
+            ->setType(ProtoCouponType::PBReturn)
+            ->setTotal(-22500)
+            ->serializeToString();
+
+        $coupon = new FiscalCoupon(['fiscal_details' => base64_encode($payload)]);
 
         $this->assertTrue($coupon->carriesNegativeAmounts());
     }
 
-    public function test_a_sale_does_not(): void
+    #[DataProvider('couponTypes')]
+    public function test_a_coupon_built_by_this_engine_does_not(CouponType $type): void
     {
-        $coupon = $this->journalRowFor(CouponType::Sale);
+        $coupon = $this->journalRowFor($type);
 
         $this->assertFalse($coupon->carriesNegativeAmounts());
+    }
+
+    public static function couponTypes(): array
+    {
+        return [
+            'sale'         => [CouponType::Sale],
+            'return'       => [CouponType::Return],
+            'cancellation' => [CouponType::Cancel],
+        ];
     }
 
     public function test_a_correction_sent_positive_by_0_10_does_not(): void

@@ -198,14 +198,13 @@ class CouponBuilderTest extends TestCase
     }
 
     /**
-     * Returns and cancellations travel with negative amounts, so ATK's totals net
-     * them out. Its TEST portal adds every coupon's amounts with their sign, and it
-     * accepted and verified negative corrections on 2026-10-21 (W162). The caller
-     * still passes positive figures and the type; the sign is applied here, once,
-     * to the POS coupon and the citizen coupon alike.
+     * Returns and cancellations travel with the same positive amounts a sale
+     * carries; only the type and the reference to the original coupon mark them
+     * as corrections. Every ATK-certified till inspected on 2026-10-22 sends
+     * them positive, so the package no longer negates them while ATK's written answer is outstanding.
      */
     #[DataProvider('correctionTypes')]
-    public function test_corrections_carry_negative_amounts(CouponType $type): void
+    public function test_corrections_carry_positive_amounts(CouponType $type): void
     {
         $data = new CouponData(
             items:            [new ItemData('Ujë mineral 0,5 L', 5000, 'CP', 2.0, 10000, 'E', 'PJA')],
@@ -221,18 +220,18 @@ class CouponBuilderTest extends TestCase
         $built = $this->builder->build($this->snapshot, $data, $this->config, couponId: 12);
 
         foreach ([$built->posCoupon, $built->citizenCoupon] as $coupon) {
-            $this->assertSame(-100, $coupon->getTotal());
-            $this->assertSame(-15, $coupon->getTotalTax());
-            $this->assertSame(-85, $coupon->getTotalNoTax());
-            $this->assertSame([['E', -85, -15]], $this->taxGroupTuples($coupon->getTaxGroups()));
+            $this->assertSame(100, $coupon->getTotal());
+            $this->assertSame(15, $coupon->getTotalTax());
+            $this->assertSame(85, $coupon->getTotalNoTax());
+            $this->assertSame([['E', 85, 15]], $this->taxGroupTuples($coupon->getTaxGroups()));
         }
 
         $item = iterator_to_array($built->posCoupon->getItems())[0];
-        $this->assertSame(5000, $item->getPrice(), 'the unit price stays positive');
-        $this->assertSame(-2.0, $item->getQuantity());
-        $this->assertSame(-10000, $item->getTotal());
-        $this->assertSame(-100, iterator_to_array($built->posCoupon->getPayments())[0]->getAmount());
-        $this->assertSame(-10, $built->posCoupon->getTotalDiscount());
+        $this->assertSame(5000, $item->getPrice());
+        $this->assertSame(2.0, $item->getQuantity());
+        $this->assertSame(10000, $item->getTotal());
+        $this->assertSame(100, iterator_to_array($built->posCoupon->getPayments())[0]->getAmount());
+        $this->assertSame(10, $built->posCoupon->getTotalDiscount());
         $this->assertSame(77, $built->posCoupon->getReferenceNo());
     }
 

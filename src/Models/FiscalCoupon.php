@@ -39,9 +39,10 @@ class FiscalCoupon extends Model
     /**
      * Whether the signed payload that went to ATK carried negative amounts.
      *
-     * The payload, not the coupon type, records what ATK received: corrections
-     * sent before 0.12.0 went out with positive amounts, so a return's type says
-     * nothing about its sign. Missing or unreadable details report false.
+     * The payload, not the coupon type, records what ATK received: only
+     * corrections signed by 0.12.0 went out with negative amounts, those before
+     * and after it went out positive, so a return's type says nothing about its
+     * sign. Missing or unreadable details report false.
      */
     public function carriesNegativeAmounts(): bool
     {

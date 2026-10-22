@@ -3,6 +3,16 @@
 All notable public changes are documented in this file. The project follows
 Semantic Versioning and the Keep a Changelog format.
 
+## [0.13.0] - 2026-10-22
+
+### Changed
+
+- **Returns and cancellations are sent with positive amounts again**, as they were
+  up to 0.10.0: only the coupon type and `ReferenceNo` mark a correction. Every
+  ATK-certified till that could be inspected sends them positive, and ATK has not stated the sign in writing. Callers are unchanged.
+  `FiscalCoupon::carriesNegativeAmounts()` stays, so a consumer still prints the
+  corrections 0.12.0 sent negative as they were sent.
+
 ## [0.12.0] - 2026-10-22
 
 ### Added
