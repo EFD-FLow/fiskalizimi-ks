@@ -3,7 +3,13 @@
 All notable public changes are documented in this file. The project follows
 Semantic Versioning and the Keep a Changelog format.
 
-## [0.11.0] - 2026-10-21
+## [0.12.0] - 2026-10-22
+
+### Added
+
+- `FiscalCoupon::carriesNegativeAmounts()` reports whether a journal row's signed
+  payload went out with negative amounts, so a consumer can print a correction as
+  it was sent; rows signed before 0.12.0 report false.
 
 ### Changed
 

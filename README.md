@@ -326,6 +326,9 @@ returns and cancellations negative. Callers still pass positive figures, which
 the package validates and checks against the caller's own record before it
 applies the sign.
 
+Since 0.12.0, `FiscalCoupon::carriesNegativeAmounts()` tells whether a journal
+row's signed payload went out negative; rows signed earlier report false.
+
 The C# repository was updated on June 11, 2026 to correct its documented
 cancel/return values. The PHP repository still contains the older
 `Sale=0`, `Cancel=1`, `Return=2` schema and must not be used as the source of

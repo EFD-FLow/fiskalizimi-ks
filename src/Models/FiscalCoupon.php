@@ -2,6 +2,7 @@
 
 namespace EfdFlow\FiskalizimiKs\Models;
 
+use EfdFlow\FiskalizimiKs\Generated\PosCoupon;
 use Illuminate\Database\Eloquent\Model;
 
 class FiscalCoupon extends Model
@@ -34,6 +35,37 @@ class FiscalCoupon extends Model
         // consumers that retry an unknown result before escalating populate it.
         'unknown_since'      => 'datetime',
     ];
+
+    /**
+     * Whether the signed payload that went to ATK carried negative amounts.
+     *
+     * The payload, not the coupon type, records what ATK received: corrections
+     * sent before 0.12.0 went out with positive amounts, so a return's type says
+     * nothing about its sign. Missing or unreadable details report false.
+     */
+    public function carriesNegativeAmounts(): bool
+    {
+        $details = $this->fiscal_details;
+
+        if (! is_string($details) || $details === '') {
+            return false;
+        }
+
+        $payload = base64_decode($details, true);
+
+        if ($payload === false) {
+            return false;
+        }
+
+        try {
+            $posCoupon = new PosCoupon();
+            $posCoupon->mergeFromString($payload);
+
+            return $posCoupon->getTotal() < 0;
+        } catch (\Throwable) {
+            return false;
+        }
+    }
 
     public function getTable(): string
     {
